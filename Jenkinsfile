@@ -1,4 +1,3 @@
-
 pipeline {
     agent any
     stages {
@@ -22,6 +21,14 @@ pipeline {
                 // Example deploy command (replace with your actual deploy command)
                 sh 'echo "Deploying..."'
             }
+        }
+    }
+    post {
+        success {
+            echo 'Build Successful!'
+        }
+        failure {
+            echo 'Build Failed. Please check the logs.'
         }
     }
 }
