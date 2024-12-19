@@ -1,24 +1,28 @@
+
 pipeline {
     agent any
-    environment {
-        testvariable = "custom variable"
-    }
     stages {
         stage('Build') {
             steps {
-                sh 'echo "This is build stage"'
-                sh "echo this is test --> ${testvariable}"
+                echo 'Building the application...'
+                // Example command to build (replace with your actual build command)
+                sh 'echo "Building..."'
             }
         }
         stage('Test') {
             steps {
-                sh 'echo "This is test stage"'
+                echo 'Running tests...'
+                // Example test command (replace with your actual test command)
+                sh 'echo "Running tests..."'
             }
         }
         stage('Deploy') {
             steps {
-                sh 'echo "This is deploy stage one"'
+                echo 'Deploying the application...'
+                // Example deploy command (replace with your actual deploy command)
+                sh 'echo "Deploying..."'
             }
         }
     }
 }
+
